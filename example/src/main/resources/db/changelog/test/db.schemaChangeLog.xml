@@ -1,0 +1,51 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+    <changeSet author="Lenovo (generated)" failOnError="false" id="1635770965818-1">
+        <createTable tableName="t1">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="t1_pkey"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Lenovo (generated)" failOnError="false" id="1635770965818-2">
+        <createTable tableName="t2">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="t2_pkey"/>
+            </column>
+            <column name="pic" type="BYTEA">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="t2_pkey"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Lenovo (generated)" failOnError="false" id="1635770965818-3">
+        <createTable tableName="users">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="users_pkey"/>
+            </column>
+            <column name="emailaddress" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="firstname" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="isactive" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="isemailconfirmed" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="lastname" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="password" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="username" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="trigger_name" type="VARCHAR(200)"/>
+            <column name="trigger_group" type="VARCHAR(200)"/>
+            <column name="join_date" type="date"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
