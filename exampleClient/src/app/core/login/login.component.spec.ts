@@ -35,7 +35,9 @@ describe('LoginComponent', () => {
       declarations: [LoginComponent].concat(EntryComponents),
       imports: [TestingModule,
         RouterTestingModule.withRoutes(routes)
-      ], //, RouterTestingModule.withRoutes([{path: 'some/path',component: dummy}])]      providers: [
+      ], //, RouterTestingModule.withRoutes([{path: 'some/path',component: dummy}])] 
+           providers: [
+             AuthGuard,
         { provide: MatDialogRef, useValue: { close: (dialogResult: any) => {} } },
         {
           provide: ActivatedRoute,

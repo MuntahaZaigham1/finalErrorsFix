@@ -14,6 +14,8 @@ import { DashboardExtendedComponent } from 'src/app/extended/core/dashboard';
 import { LoginExtendedComponent } from 'src/app/extended/core/login/login.component';
 import { HttpLoaderFactory } from 'src/app/app.module';
 import { HttpClient } from '@angular/common/http';
+import { AuthGuard } from '../guards/auth.guard';
+import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 
 describe('MainNavComponent', () => {
   let component: MainNavComponent;
@@ -30,9 +32,17 @@ describe('MainNavComponent', () => {
              MatSidenavModule,
              MatExpansionModule,
              RouterTestingModule.withRoutes(routes),
+             TranslateModule.forChild({
+              loader: {
+                provide: TranslateLoader,
+                useFactory: HttpLoaderFactory,
+                deps: [HttpClient],
+              },
+              isolate: false,
+            }),
             ],
       declarations: [MainNavComponent].concat(EntryComponents),
-      providers: [UsersService]
+      providers: [UsersService, TranslateService]
     })
     .compileComponents();
 

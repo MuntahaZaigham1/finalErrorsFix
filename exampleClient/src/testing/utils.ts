@@ -36,6 +36,7 @@ import { ActivatedRouteMock, GlobalsMock, AuthenticationServiceMock, GlobalPermi
 import { AuthenticationService } from 'src/app/core/services/authentication.service';
 import { GlobalPermissionService } from 'src/app/core/services/global-permission.service';
 import { Globals } from 'src/app/core/services/globals';
+import { TranslateModule, TranslatePipe, TranslateService, TranslateStore } from '@ngx-translate/core';
 
 export var EntryComponents: any[] = [
   PickerComponent,
@@ -53,7 +54,8 @@ export var imports: any[] = [
   MatSelectModule, MatCheckboxModule, MatAutocompleteModule,
   MatDatepickerModule, MatNativeDateModule, MatMenuModule,
   MatChipsModule, MatSortModule, MatSnackBarModule, MatProgressSpinnerModule,
-  NgxMaterialTimepickerModule, TranslateTestingModule, MatTooltipModule, RouterTestingModule
+  NgxMaterialTimepickerModule, MatTooltipModule, RouterTestingModule, TranslateModule.forRoot(),
+  RouterTestingModule
 ];
 
 export var exports: any[] = [
@@ -65,10 +67,14 @@ export var exports: any[] = [
   MatSelectModule, MatCheckboxModule, MatAutocompleteModule,
   MatDatepickerModule, MatNativeDateModule, MatMenuModule, MatTable,
   MatChipsModule, MatSortModule, MatSnackBarModule, MatProgressSpinnerModule,
-  NgxMaterialTimepickerModule, TranslateTestingModule, MatTooltipModule,RouterTestingModule
+  NgxMaterialTimepickerModule,TranslateModule,
+  RouterTestingModule, MatTooltipModule,RouterTestingModule
 ];
 
 export var providers: any[] = [
+  TranslateService,
+  TranslatePipe,
+  TranslateStore,
   // {provide: Router, useClass: MockRouter},
   { provide: ActivatedRoute, useValue: ActivatedRouteMock },
   { provide: Globals, useValue: GlobalsMock },

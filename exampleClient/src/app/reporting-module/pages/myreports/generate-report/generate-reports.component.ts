@@ -16,7 +16,7 @@ import { IDashboard } from 'src/app/reporting-module/pages/dashboard/idashboard'
 import { CubejsClient } from '@cubejs-client/ngx';
 import * as CodeMirror from 'codemirror';
 import { WindowRef } from './WindowRef';
-import sqlFormatter from "sql-formatter";
+import {sqlFormatter} from "sql-formatter";
 import { Globals } from 'src/app/core/services/globals';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -53,7 +53,7 @@ export class GenerateReportComponent implements OnInit, OnDestroy {
   dataTime: Array<Dimensions> = [];
   filters: any = [];
   selectedFilters: any = [];
-  chartType = 'line';
+  chartType:any = 'line';
   query: QueryParam;
   ctype: any = 'line';
   timeFilter: any = '';
@@ -356,7 +356,7 @@ export class GenerateReportComponent implements OnInit, OnDestroy {
       title = title.replace(/_/g, " ");
       title = title.
       toLowerCase().split(" ").map((s: any) => s.charAt(0).toUpperCase() + s.substr(1)).join(" ");
-      let dimension = this.tableColumns[this.tableColumns.findIndex((s: sny) => s.name === (`${meta} ${title}`))];
+      let dimension = this.tableColumns[this.tableColumns.findIndex((s: any) => s.name === (`${meta} ${title}`))];
       if (dimension.type == "string") {
         this.aggregations = this.stringAggregations
       } else if (dimension.type == "time") {

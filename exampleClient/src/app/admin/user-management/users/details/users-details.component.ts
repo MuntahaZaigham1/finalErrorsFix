@@ -132,18 +132,7 @@ export class UsersDetailsComponent extends BaseDetailsComponent<IUsers> implemen
   
   onItemFetched(item: IUsers) {
     this.item = item;
-
-
-
-
-
-
-    this.itemForm.get('joinDate').setValue(item.joinDate? new Date(item.joinDate): null);
-
-
-
-
-
+    this.itemForm.get('joinDate')?.setValue(item.joinDate? new Date(item.joinDate): null);
      this.itemForm.patchValue(item);
 
   }

@@ -253,7 +253,7 @@ describe('PermissionListComponent', () => {
       let filteredArray = [data[0]];
       spyOn(component.dataService, 'getAssociations').and.returnValue(of(filteredArray));
       spyOn(component.dataService, 'getAll').and.returnValue(of(filteredArray));
-
+      fixture.detectChanges();
       let filterableColumns = component.columns.filter(x => x.filter)
       if (filterableColumns.length > 0) {
         let searchButton = fixture.debugElement.query(By.css('app-list-filters')).query(By.css('button')).nativeElement;

@@ -172,7 +172,7 @@ export class MyreportsComponent extends BaseListComponent<IReport> implements On
     this.router.navigate([`reporting/reports/${id}`]);
   }
   
-  refreshReport(id) {
+  refreshReport(id: any) {
     this.confirmDialogRef = this.dialog.open(ConfirmDialogComponent, {
       disableClose: true,
       data: {
